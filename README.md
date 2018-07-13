@@ -1,6 +1,6 @@
-# smms-image-paste-md README
+# smms-image-paste-md 
 
-This is the README for your extension "smms-image-paste-md"
+upload image to sm.ms
 
 ## Features
 
@@ -22,4 +22,4 @@ Test in ubuntu
 
 ## Release Notes
 
-fork from [vscode-qiniu-upload-image](https://github.com/favers/vscode-qiniu-upload-image")
+fork from ![vscode-qiniu-upload-image](https://github.com/favers/vscode-qiniu-upload-image")
