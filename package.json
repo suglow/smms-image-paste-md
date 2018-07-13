@@ -11,16 +11,35 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "onCommand:extension.smmsImagePasteMd"
     ],
     "main": "./extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.sayHello",
-                "title": "Hello World"
+                "command": "extension.smmsImagePasteMd",
+                "title": "smms image paste"
             }
-        ]
+        ],
+        "keybindings": [
+            {
+                "command": "extension.smmsImagePasteMd",
+                "key": "ctrl+alt+v",
+                "mac": "cmd+alt+v",
+                "when": "editorTextFocus"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "smmsImagePasteMd configuration",
+            "properties": {
+                "smmsImagePasteMd.imgPath": {
+                    "type": "string",
+                    "default": "./img",
+                    "description": "图片本地保存位置"
+                }
+            }
+        }
     },
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",
