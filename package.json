@@ -24,8 +24,8 @@
         "keybindings": [
             {
                 "command": "extension.smmsImagePasteMd",
-                "key": "ctrl+alt+v",
-                "mac": "cmd+alt+v",
+                "key": "ctrl+alt+s",
+                "mac": "cmd+alt+s",
                 "when": "editorTextFocus"
             }
         ],
