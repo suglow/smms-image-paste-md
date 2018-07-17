@@ -75,7 +75,7 @@ function start() {
             }
             qnUpload(config, imagePath, mdFilePath).then(({ name, url ,image}) => {
                 vscode.window.showInformationMessage('上传成功'+`${image}`);
-                const img = `![${name}](${url})`;
+                const img = `![${image}](${url})`;
                 editor.edit(textEditorEdit => {
                     textEditorEdit.insert(editor.selection.active, img)
                 });
@@ -97,18 +97,24 @@ function getImagePath(filePath, selectText, localPath) {
     let fileName = path.basename(filePath, ext)
 
     if (!selectText) {
-        imageFileName = fileName + "_md-" + moment().format("Y-MM-DD-HH-mm-ss") + '.jpg';
+        imageFileName = fileName + "-" + moment().format("Y-MM-DD-HH-mm-ss") + '.jpg';
     } else {
         imageFileName = selectText + '.jpg';
     }
 
     // 图片本地保存路径
     let folderPath = path.dirname(filePath);
+
+    
     let imagePath = '';
     if (path.isAbsolute(localPath)) {
         imagePath = path.join(localPath, imageFileName);
     } else {
-        imagePath = path.join(folderPath, localPath, imageFileName);
+        if (fs.existsSync(path.join(folderPath, fileName))) {
+            imagePath = path.join(folderPath, fileName, imageFileName);
+        } else {
+            imagePath = path.join(folderPath, localPath, imageFileName);
+        }
     }
 
     return imagePath;

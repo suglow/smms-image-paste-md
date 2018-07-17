@@ -22,4 +22,5 @@ Test in ubuntu
 
 ## Release Notes
 
-fork from ![vscode-qiniu-upload-image](https://github.com/favers/vscode-qiniu-upload-image")
+fork from ("https://github.com/favers/vscode-qiniu-upload-image")
+
